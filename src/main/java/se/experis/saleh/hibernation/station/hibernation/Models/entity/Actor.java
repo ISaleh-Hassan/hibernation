@@ -1,25 +1,29 @@
-package se.experis.saleh.hibernation.station.hibernation.Models;
+package se.experis.saleh.hibernation.station.hibernation.Models.entity;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.util.*;
 
 @Entity
+@Table(name = "Actors")
 public class Actor {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Integer id;
 
-    @Column
+    private int actorId;
+
+    @Column(name= "first_name")
     private String firstName;
 
-    @Column
+    @Column(name= "last_name")
     private String lastName;
 
-    @Column
+    @Column(name = "birth")
     private Date dateOfBirth;
 
-    @Column
+    @Column(name= "url_to_imdb")
     private String urlToImdb;
+
+
     
 
     public String getFirstName() {
@@ -55,10 +59,19 @@ public class Actor {
     }
 
     public Integer getId() {
-        return id;
+        return actorId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(Integer actorId) {
+        this.actorId = actorId;
     }
+
+    public int getActorId() {
+        return actorId;
+    }
+
+    public void setActorId(int actorId) {
+        this.actorId = actorId;
+    }
+
 }
